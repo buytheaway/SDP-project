@@ -1,5 +1,9 @@
+import com.example.hltv.HLTVParser;
+import com.example.hltv.Match;
 import com.example.hltv.Team;
 
+import java.io.IOException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +42,75 @@ class HLTVParseR {
         return null;
     }
 
-    public Match.TeamStats parseTeamStats(String teamUrl) {
+    public TeamStats parseTeamStats(String teamUrl) {
         return null;
+    }
+
+    public static class DatabaseManager {
+
+        // URL подключения к PostgreSQL
+        private static final String URL = "jdbc:postgresql://localhost:5432/your_db_name";
+        private static final String USER = "your_username";
+        private static final String PASSWORD = "your_password";
+
+        // Метод для подключения к базе данных
+        public Connection connect() {
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.println("Connected to the PostgreSQL server successfully.");
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return conn;
+        }
+
+        // Метод для очистки таблицы перед вставкой новых данных
+        public void clearOldData(Connection conn) throws SQLException {
+            String query = "DELETE FROM matches";
+            try (Statement stmt = conn.createStatement()) {
+                stmt.executeUpdate(query);
+                System.out.println("Old match data cleared.");
+            }
+        }
+
+        // Метод для вставки спарсенных данных в базу данных
+        public void insertMatchData(Connection conn, List<Match> matches) throws SQLException {
+            String query = "INSERT INTO matches (team1, team2, match_time, event) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+                for (Match match : matches) {
+                    pstmt.setString(1, match.getTeam1());
+                    pstmt.setString(2, match.getTeam2());
+                    pstmt.setTimestamp(3, Timestamp.valueOf(match.getMatchTime())); // assuming matchTime is LocalDateTime
+                    pstmt.setString(4, match.getEvent());
+                    pstmt.addBatch();
+                }
+                pstmt.executeBatch();
+                System.out.println("New match data inserted.");
+            }
+        }
+
+        public static void main(String[] args) {
+            DatabaseManager dbManager = new DatabaseManager();
+            HLTVParser parser = new HLTVParser();
+
+            // Подключаемся к базе данных
+            try (Connection conn = dbManager.connect()) {
+                // Чистим старые данные
+                dbManager.clearOldData(conn);
+
+                // Парсим новые данные
+                List<com.example.hltv.Match> matches = parser.parseUpcomingMatches();
+
+                // Вставляем новые данные
+                dbManager.insertMatchData(conn, matches);
+            } catch (SQLException | IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private class TeamStats {
     }
 }
 

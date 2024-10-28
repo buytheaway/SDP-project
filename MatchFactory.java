@@ -61,6 +61,22 @@ class Match {
         return type;
     }
 
+    public String getTeam1() {
+        return null;
+    }
+
+    public String getTeam2() {
+        return null;
+    }
+
+    public String getMatchTime() {
+        return null;
+    }
+
+    public String getEvent() {
+        return null;
+    }
+
     public class TeamStats {
     }
 }
