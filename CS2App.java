@@ -8,27 +8,30 @@ import javafx.stage.Stage;
 import java.util.List;
 
 public class CS2App extends Application {
-
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("CS2 Analytics");
 
         VBox root = new VBox();
-        Label label = new Label("Добро пожаловать в CS2 Аналитику");
+        Label label = new Label("Welcome to CS2 Analytics");
         root.getChildren().add(label);
 
-        // Список для отображения матчей
+        // ListView to display matches
         ListView<String> matchListView = new ListView<>();
         root.getChildren().add(matchListView);
 
-        // Загружаем данные матчей и отображаем
+        // Load and display match data
         HLTVParseR parser = new HLTVParseR();
         List<Match> matches = parser.parseUpcomingMatches();
-        for (Match match : matches) {
-            matchListView.getItems().add(match.toString());
+        if (matches != null && !matches.isEmpty()) {
+            for (Match match : matches) {
+                matchListView.getItems().add(match.toString());
+            }
+        } else {
+            System.out.println("No matches found to display.");
         }
 
-        // Настройка сцены
+        // Set up scene
         Scene scene = new Scene(root, 400, 300);
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -28,6 +28,16 @@
         <jarDirectory url="file://$USER_HOME$/IdeaProjects/javafx-sdk-22.0.2/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="jsoup-1.18.1" level="project" />
+    <orderEntry type="library" exported="" name="jsoup-1.18.1" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/.idea/libraries/jsoup-1.18.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="openjfx-23.0.1_windows-x64_bin-sdk" level="project" />
   </component>
 </module>

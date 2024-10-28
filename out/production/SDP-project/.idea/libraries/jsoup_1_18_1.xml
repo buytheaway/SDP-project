@@ -2,8 +2,10 @@
   <library name="jsoup-1.18.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../../jsoup-1.18.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/.idea/libraries/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/.idea/libraries/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib" recursive="false" />
   </library>
 </component>
