@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class CS2Facade {
-    private HLTVParseR hltvParser;
-    private CS2Analytics cs2Analytics;
+    private final HLTVParseR hltvParser;
+    private final CS2Analytics cs2Analytics;
 
     public CS2Facade() {
         this.hltvParser = new HLTVParseR();
