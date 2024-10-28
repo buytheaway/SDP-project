@@ -39,5 +39,14 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="openjfx-23.0.1_windows-x64_bin-sdk" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/postgresql-42.2.22.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

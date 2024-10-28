@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS matches (
+    id SERIAL PRIMARY KEY,
+    team1 VARCHAR(255) NOT NULL,
+    team2 VARCHAR(255) NOT NULL,
+    match_time TIMESTAMP NOT NULL,
+    event VARCHAR(255) NOT NULL
+);
