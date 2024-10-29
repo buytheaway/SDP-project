@@ -4,12 +4,12 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
 
-    // URL подключения к вашей базе данных PostgreSQL
+    // подключения базе данных PostgreSQL
     private static final String URL = "jdbc:postgresql://localhost:5432/hltvdb";  // Ваш URL
     private static final String USER = "postgres";  // Ваше имя пользователя
     private static final String PASSWORD = "zazazin61";  // Ваш пароль
 
-    // Метод для подключения к базе данных
+    // Метод для подключения к бд
     public Connection connect() {
         Connection conn = null;
         try {

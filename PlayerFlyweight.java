@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-// Легковес для хранения данных о игроках
+//хранения данных о игроках
 class PlayerFlyweight {
     private static Map<String, PlayerData> players = new HashMap<>();
 
@@ -22,5 +22,4 @@ class PlayerData {
         this.team = team;
     }
 
-    // Getters и другие методы
 }
