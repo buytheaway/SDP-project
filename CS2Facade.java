@@ -50,10 +50,10 @@ class HLTVParseR {
 
         // URL подключения к PostgreSQL
         private static final String URL = "jdbc:postgresql://localhost:5432/your_db_name";
-        private static final String USER = "your_username";
-        private static final String PASSWORD = "your_password";
+        private static final String USER = "postgre";
+        private static final String PASSWORD = "zazazin61";
 
-        // Метод для подключения к базе данных
+        // Метод для подключения к бд
         public Connection connect() {
             Connection conn = null;
             try {
