@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.CS2AppController"
-            prefHeight="600.0" prefWidth="800.0">
-
+<VBox prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CS2AppController" >
     <children>
-        <ListView fx:id="matchListView" layoutX="50.0" layoutY="50.0" prefHeight="500.0" prefWidth="700.0"/>
+
+        <Label text="Counter Strike 2 PRO-Scene" GridPane.rowIndex="0" styleClass="title-label" />
+        <Label text="Label for Some Info" GridPane.rowIndex="1" styleClass="info-label" />
+        <Button text="Last Winner" GridPane.rowIndex="2" styleClass="styled-button" />
     </children>
-</AnchorPane>
+</VBox>
