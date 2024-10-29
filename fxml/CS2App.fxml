@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fxml.CS2AppController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <children>
+        <ListView fx:id="matchListView" layoutX="50.0" layoutY="50.0" prefHeight="500.0" prefWidth="700.0"/>
+    </children>
+</AnchorPane>
