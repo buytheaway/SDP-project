@@ -16,4 +16,16 @@ public class Team {
     public String toString() {
         return "Rank #" + rank + ": " + name + " (" + points + ")";
     }
+
+    public String getName() {
+        return null;
+    }
+
+    public int getRank() {
+        return 0;
+    }
+
+    public String getPoints() {
+        return null;
+    }
 }
