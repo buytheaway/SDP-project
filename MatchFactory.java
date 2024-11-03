@@ -53,7 +53,7 @@ class BO3Match extends Match1 {
 class Match {
     private String type;
 
-    public Match(String type) {
+    public Match(String team1, String team2, String string, String type) {
         this.type = type;
     }
 
