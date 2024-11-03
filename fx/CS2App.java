@@ -15,10 +15,10 @@ public class CS2App extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/CS2App.fxml"));
         primaryStage.setTitle("CS2 Analytics");
-        primaryStage.setScene(root.getScene());
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
-
     }
+
 
     public static void main(String[] args) {launch(args);}
 }
