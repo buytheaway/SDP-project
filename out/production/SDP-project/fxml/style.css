@@ -1,0 +1,14 @@
+.title-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.info-label {
+    -fx-font-size: 16px;
+}
+
+.styled-button {
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-padding: 5px 10px;
+}
