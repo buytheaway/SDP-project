@@ -50,10 +50,10 @@ class BO3Match extends Match1 {
     }
 }
 
-class Match {
+class MatchInterface {
     private String type;
 
-    public Match(String team1, String team2, String string, String type) {
+    public MatchInterface(String team1, String team2, String string, String type) {
         this.type = type;
     }
 

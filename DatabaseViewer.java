@@ -57,18 +57,21 @@ public class DatabaseViewer {
 
     private void displayPlayers(Connection conn) throws SQLException {
         String query = "SELECT players.id, players.player_name, teams.team_name, players.position " +
-                "FROM players JOIN teams ON players.team_id = teams.id ORDER BY teams.rank, players.position";
+                "FROM players " +
+                "LEFT JOIN teams ON players.team_id = teams.id " +
+                "ORDER BY teams.rank ASC, players.position ASC";
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String playerName = rs.getString("player_name");
-                String teamName = rs.getString("team_name");
-                String position = rs.getString("position");
+                String teamName = rs.getString("team_name") != null ? rs.getString("team_name") : "No Team";
+                String position = rs.getString("position") != null ? rs.getString("position") : "Unknown Position";
 
-                System.out.println("ID: " + id + ", Player: " + playerName + " from Team: " + teamName + " Position: " + position);
+                System.out.println("#" + id + ", Player: " + playerName );
             }
         }
     }
+
 
     public static void main(String[] args) {
         DatabaseViewer viewer = new DatabaseViewer();

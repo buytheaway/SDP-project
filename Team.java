@@ -1,5 +1,3 @@
-package com.example.hltv;
-
 // Модель данных для команды
 public class Team {
     private int rank;
