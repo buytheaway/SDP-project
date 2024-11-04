@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fx.CS2AppController"
-            prefHeight="600.0" prefWidth="800.0">
-=======
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fxml.CS2AppController"
+      alignment="CENTER" spacing="10" style="-fx-padding: 20;">
 
-<VBox prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CS2AppController" >
->>>>>>> db20e1879de484eec5c6b257a5cb826f18e0d504
-    <children>
-
-        <Label text="Counter Strike 2 PRO-Scene" GridPane.rowIndex="0" styleClass="title-label" />
-        <Label text="Label for Some Info" GridPane.rowIndex="1" styleClass="info-label" />
-        <Button text="Last Winner" GridPane.rowIndex="2" styleClass="styled-button" />
-    </children>
+    <Label fx:id="messageLabel" text="Welcome!" style="-fx-font-size: 18px;"/>
+    <TextField fx:id="inputField" promptText="Enter your name"/>
+    <Button fx:id="submitButton" text="Submit" onAction="#handleSubmitButtonAction"/>
 </VBox>

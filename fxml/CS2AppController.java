@@ -1,16 +1,24 @@
 package fxml;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class CS2AppController {
 
     @FXML
-    private Label label;
+    private Label messageLabel;
+
     @FXML
-    private Button button;
+    private TextField inputField;
+
     @FXML
-    private void handleButtonClick() {
-        label.setText("Button clicked!");
+    private Button submitButton;
+
+    @FXML
+    private void handleSubmitButtonAction() {
+        String userInput = inputField.getText();
+        messageLabel.setText("Hello, " + userInput + "!");
     }
 }
