@@ -7,7 +7,17 @@ public class DatabaseManager {
     private static final String USER = "postgres"; // Update with your DB user
     private static final String PASSWORD = "zazazin61"; // Update with your DB password
 
+<<<<<<< Updated upstream
     // Method to connect to the database
+=======
+    // Подключение к базе данных PostgreSQL
+    private static final String URL = "jdbc:postgresql://localhost:5432/hltvdb";  // Проверьте это
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "789456123";//    zazazin61    |     789456123
+
+
+    // Метод для подключения к базе данных
+>>>>>>> Stashed changes
     public Connection connect() {
         Connection conn = null;
         try {
