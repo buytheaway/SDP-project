@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="fxml.CS2AppController"
       alignment="CENTER" spacing="10" style="-fx-padding: 20;">
 
-    <Label fx:id="messageLabel" text="Welcome!" style="-fx-font-size: 18px;"/>
-    <TextField fx:id="inputField" promptText="Enter your name"/>
-    <Button fx:id="submitButton" text="Submit" onAction="#handleSubmitButtonAction"/>
+    <Button text="Top Teams" onAction="#showTopTeams"/>
+    <Button text="Top Players" onAction="#showTopPlayers"/>
 </VBox>

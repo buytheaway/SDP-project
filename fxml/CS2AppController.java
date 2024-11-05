@@ -1,24 +1,29 @@
 package fxml;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CS2AppController {
 
-    @FXML
-    private Label messageLabel;
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     @FXML
-    private TextField inputField;
+    private void showTopTeams() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TopTeamsView.fxml"));
+        stage.setScene(new Scene(loader.load()));
+    }
 
     @FXML
-    private Button submitButton;
-
-    @FXML
-    private void handleSubmitButtonAction() {
-        String userInput = inputField.getText();
-        messageLabel.setText("Hello, " + userInput + "!");
+    private void showTopPlayers() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TopPlayersView.fxml"));
+        stage.setScene(new Scene(loader.load()));
     }
 }

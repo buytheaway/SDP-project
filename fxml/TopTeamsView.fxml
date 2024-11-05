@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fx.TopTeamsController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+
+    <TableView fx:id="teamsTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="teamNameColumn" text="Team Name"/>
+            <TableColumn fx:id="rankColumn" text="Rank"/>
+            <TableColumn fx:id="pointsColumn" text="Points"/>
+        </columns>
+    </TableView>
+</VBox>

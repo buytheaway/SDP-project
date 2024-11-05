@@ -26,7 +26,7 @@ public class DatabaseViewer {
         }
     }
 
-    private void displayMatches(Connection conn) throws SQLException {
+    public void displayMatches(Connection conn) throws SQLException {
         String query = "SELECT * FROM matches ORDER BY match_time";
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
@@ -41,7 +41,7 @@ public class DatabaseViewer {
         }
     }
 
-    private void displayTeams(Connection conn) throws SQLException {
+    public void displayTeams(Connection conn) throws SQLException {
         String query = "SELECT * FROM teams ORDER BY rank";
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
@@ -55,7 +55,7 @@ public class DatabaseViewer {
         }
     }
 
-    private void displayPlayers(Connection conn) throws SQLException {
+    public void displayPlayers(Connection conn) throws SQLException {
         String query = "SELECT players.id, players.player_name, teams.team_name, players.position " +
                 "FROM players " +
                 "LEFT JOIN teams ON players.team_id = teams.id " +
